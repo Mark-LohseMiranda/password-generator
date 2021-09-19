@@ -52,6 +52,7 @@ header {
 
 .card-body {
   min-height: 100px;
+  user-select: all;
 }
 
 .card-footer {
@@ -118,7 +119,57 @@ button[disabled] {
   overflow: hidden;
 }
 
+.password-choices {
+  display: none;
+}
 
+.password-choices {
+  text-align: center;
+}
+
+.password-choices li {
+  list-style-type: none;
+}
+
+.makingHoverWork:hover .password-choices {
+  display: block;
+}
+
+/* styling range thumb and bar */
+
+input[type="range"] {
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 5px;
+  background: blue;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: url(./88810-200.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -10px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: blue;
+  box-shadow: 0px 0px 10px salmon;
+}
 
 @media (max-width: 690px) {
   .btn {

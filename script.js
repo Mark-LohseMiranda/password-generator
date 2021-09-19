@@ -67,3 +67,5 @@ slider.oninput = function () {
 generateBtn.addEventListener("click", () => {
   buildPassword();
 });
+
+
