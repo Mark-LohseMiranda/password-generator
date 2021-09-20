@@ -1,5 +1,6 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
+let choicesBtn = document.querySelector("#choices");
 const alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 const alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const special = " !#$%&()*+,-./:;<=>?@[]^_`{|}~";
@@ -7,12 +8,22 @@ const numbers = "0123456789";
 let length = 8;
 
 function buildPassword() {
+
+  // blank displayed password if submit button is pushed more than once
+
   let displayPassword = "";
   let generatedPassword = "";
+
+  // if just the lowerCase was checked
 
   if (document.querySelector("#lowerCase").checked) {
     generatedPassword = alphabetLower;
   }
+
+  // If generatedPassword is empty then nothing was checked therefore
+  // alphabetUpper can just be set equal to generatedPassword
+  // otherwise alphabetUpper has to be concated to generatedPassword
+  // this is what the remainder of if statements do
 
   if (document.querySelector("#upperCase").checked) {
     if (generatedPassword === "") {
@@ -68,4 +79,11 @@ generateBtn.addEventListener("click", () => {
   buildPassword();
 });
 
+// Add event listener to open and close choices form
+
+function showHide() {
+  console.log('this is working');
+  let element = document.getElementById("password-choices-id");
+  element.classList.toggle("password-choices-show");
+}
 

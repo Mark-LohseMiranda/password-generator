@@ -119,7 +119,7 @@ button[disabled] {
   overflow: hidden;
 }
 
-.password-choices {
+.password-choices-show {
   display: none;
 }
 
@@ -129,10 +129,6 @@ button[disabled] {
 
 .password-choices li {
   list-style-type: none;
-}
-
-.makingHoverWork:hover .password-choices {
-  display: block;
 }
 
 /* styling range thumb and bar */

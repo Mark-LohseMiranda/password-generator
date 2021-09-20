@@ -28,9 +28,9 @@
       </div>
 
       <div class="card-footer">
-        <div class="makingHoverWork">
-          <button class="btn">Generate Password</button>
-          <div class="password-choices">
+        
+          <button onclick="showHide()" id="choices" class="btn">Generate Password</button>
+          <div id="password-choices-id" class="password-choices">
             <ul>
               <li>Lower Case: <input type="checkbox" id="lowerCase" /></li>
               <li>Upper Case: <input type="checkbox" id="upperCase" /></li>
@@ -53,7 +53,7 @@
             </ul>
             <button id="generate" class="btn">Submit</button>
           </div>
-        </div>
+        
       </div>
     </div>
 
