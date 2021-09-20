@@ -5,7 +5,6 @@ const alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 const alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const special = " !#$%&()*+,-./:;<=>?@[]^_`{|}~";
 const numbers = "0123456789";
-let length = 8;
 
 function buildPassword() {
   // blank displayed password if submit button is pushed more than once
@@ -51,15 +50,19 @@ function buildPassword() {
     }
   }
 
-  length = document.getElementById("choseLength").value;
+  let length = document.getElementById("choseLength").value;
 
   for (let i = 0; i < length; i++)
     displayPassword += generatedPassword.charAt(
       Math.floor(Math.random() * generatedPassword.length)
     );
 
+// Display password, then focus and select password
+
   let passwordText = document.querySelector("#password");
   passwordText.value = displayPassword;
+  passwordText.focus();
+  passwordText.select();
 }
 
 //display numerical position of slider next to slider
@@ -73,9 +76,17 @@ slider.oninput = function () {
 };
 
 // Add event listener to generate button
+// additionally check to make sure at least one checkbox is checked
 
 generateBtn.addEventListener("click", () => {
-  buildPassword();
+  
+  let checkBoxes = document.querySelectorAll('input[type=checkbox]:checked');
+  if (checkBoxes.length === 0) {
+    alert('Please check at least one box');
+  } else {
+    buildPassword();
+  }
+  
 });
 
 // Add event listener to open and close choices form
