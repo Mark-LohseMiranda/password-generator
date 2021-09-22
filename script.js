@@ -32,7 +32,7 @@ function userChoice() {
 function getLength() {
   choseLength = prompt("How many characters (8-128)");
   if (choseLength < 8 || choseLength > 128) {
-    alert("Please chose between 8 and 128 characters!");
+    alert("Please choose between 8 and 128 characters!");
     getLength();
   } else {
     writePassword();
