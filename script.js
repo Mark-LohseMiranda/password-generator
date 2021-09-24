@@ -27,12 +27,15 @@ function userChoice() {
   }
 }
 
-// Get length from user and validate user's input is btw 8-128
+// Get length from user and validate user's input is btw 8-128 and a number
 
 function getLength() {
   choseLength = prompt("How many characters (8-128)");
-  if (choseLength < 8 || choseLength > 128) {
-    alert("Please choose between 8 and 128 characters!");
+  choseLength = parseInt(choseLength);
+  console.log(choseLength);
+  console.log(typeof choseLength);
+  if (((choseLength < 8) || (choseLength > 128)) || (isNaN(choseLength))) {
+    alert("Please choose a number between 8 and 128 characters!");
     getLength();
   } else {
     writePassword();
